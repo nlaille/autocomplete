@@ -8,8 +8,24 @@ repositories {
 dependencies {
     compile group: 'org.scala-lang', name: 'scala-library', version: '2.11.8'
     compile 'org.slf4j:slf4j-api:1.7.21'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.21'
 
     testCompile group: 'org.scalatest', name: 'scalatest_2.11', version: '3.0.3'
     testCompile group: 'junit', name: 'junit', version: '4.4'
+}
 
+task runSimple(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+
+    main = 'com.contentsquare.autocomplete.SimpleAutoCompleterFromFile'
+
+    args(findProperty("file") ?: 'input/sample1.mow', findProperty("query") ?: "p")
+}
+
+task runIndexed(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+
+    main = 'com.contentsquare.autocomplete.IndexedAutoCompleterFromFile'
+
+    args(findProperty("file") ?: 'input/sample1.mow', findProperty("query") ?: "p")
 }
