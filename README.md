@@ -8,7 +8,7 @@ Autocomplete (example below), except that results must be in order vs. Google ra
 
 keywords.
 
-Informations : [link](exo004-autocomplete.pdf)
+Informations : [link](ex004-autocomplete.pdf)
 
 # Usage
 
